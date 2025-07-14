@@ -1,14 +1,7 @@
 # UNSUPERVISED ANALYSIS OF RNA-seq BREAST CANCER DATA
 
-# Install required packages (run only once if not installed)
-packages <- c("readr", "caret", "ggplot2", "plotly", "stats", "vegan", "Rtsne", "FNN")
-installed_packages <- rownames(installed.packages())
-for (pkg in packages) {
-  if (!(pkg %in% installed_packages)) {
-    install.packages(pkg, dependencies = TRUE)
-  }
-}
-
+# Install required packages
+install.packages(c("readr", "caret", "ggplot2", "plotly", "vegan", "Rtsne", "FNN"))
 # Load the libraries
 library(readr)
 library(caret)
