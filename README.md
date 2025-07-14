@@ -6,7 +6,7 @@ This repository contains an analysis of RNA-seq gene expression data from breast
 
 - `data/`: Contains the input data files (`gene_expression.csv`, `column_names.txt`, `classes.csv`).
 - `scripts/unsupervised_analysis.R`: Fully commented R script implementing all four unsupervised learning methods.
-- `plots/`: (Optional) Visualizations exported from the analysis.
+- `plots/`: Visualizations exported from the analysis.
 - `README.md`: Project documentation.
 
 ## Objective
