@@ -25,18 +25,27 @@ Each technique was applied in 2 and 3 dimensions. Performance was evaluated usin
 - Neighbor conservation rate (t-SNE)
 
 
-## 📊 Results Summary
+## Results Summary
 
-- **PCA** efficiently explained variance but failed to separate classes with nonlinear relationships.
-- **MDS** revealed moderate separation based on distance preservation but suffered from stress.
-- **Isomap** improved class separation when using an optimal number of neighbors (`k = 10`).
-- **t-SNE** showed the best visual clustering and neighbor preservation, especially in 3D.
+- **PCA**:  
+  The first two principal components explain **21.82%** of the variance, and the first three explain **30.52%**. While some variability is captured, important information may be lost when reducing to 2D or 3D. Most classes overlap, but samples from class **AGH** show a clearer separation.
 
-The results suggest that nonlinear methods like **t-SNE** and **Isomap** are more suitable for capturing biological structures in RNA-seq datasets.
+- **MDS**:  
+  Stress values are **0.566 (2D)** and **0.467 (3D)**, indicating moderate distortion. The AGH class is somewhat distinguishable, although other classes remain entangled. MDS performs slightly better than PCA in preserving global structure.
 
-## 🧠 Biological Interpretation
+- **Isomap**:  
+  High stress values (**2.32 in 2D**, **2.60 in 3D**) suggest poor distance preservation. However, visual separation of classes is more apparent, with some clusters clearly corresponding to class labels.
 
-Some of the observed groupings in 2D/3D space corresponded with known biological subtypes in the `Class` labels, supporting the utility of unsupervised learning in exploratory transcriptomics.
+- **t-SNE**:  
+  The 10-nearest neighbor preservation rate is **47.17% (2D)** and **50.96% (3D)**. While not optimal, t-SNE provides the most visually distinct class separations. However, its stochastic nature and lower preservation of local structures suggest limited reproducibility.
+
+
+## Biological Interpretation
+
+Although no method perfectly preserved the data structure, **t-SNE and MDS** revealed biologically relevant separations—particularly for class **AGH**, which consistently appeared isolated across methods. This suggests potential transcriptional uniqueness in that group.
+
+The modest performance of PCA and Isomap indicates the complexity and non-linear nature of RNA-seq data, highlighting the importance of method selection in exploratory transcriptomic analyses.
+
 
 ## 👨‍💻 Author
 
